@@ -9,7 +9,7 @@ import { useBasket } from '../../context/BasketContext';
 const Navbar = () => {
   const history = useHistory();
 
-  const { loggedIn, logout } = useAuth();
+  const { loggedIn, logout, user } = useAuth();
   const { items } = useBasket();
 
   const handleLogout = async () => {
@@ -48,6 +48,13 @@ const Navbar = () => {
               <Link to="/basket">
                 <Button colorScheme="pink" variant="outline">
                   Basket ({items.length})
+                </Button>
+              </Link>
+            )}
+            {user?.role === 'admin' && (
+              <Link to="/admin">
+                <Button colorScheme="pink" variant="outline">
+                  Admin
                 </Button>
               </Link>
             )}
