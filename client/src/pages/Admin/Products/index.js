@@ -3,6 +3,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { fetchProductList, deleteProduct } from '../../../api';
 import { Space, Table, Popconfirm } from 'antd';
 import { Link } from 'react-router-dom';
+import { Button, Flex, Text } from '@chakra-ui/react';
 
 const Products = () => {
   const queryClient = useQueryClient();
@@ -66,6 +67,14 @@ const Products = () => {
 
   return (
     <div>
+      <Flex justifyContent={'space-between'} alignItems={'center'}>
+        <Text fontSize="2xl" p="5">
+          Products
+        </Text>
+        <Button>
+          <Link to="/admin/products/new">New Product</Link>
+        </Button>
+      </Flex>
       <Table columns={columns} dataSource={data} rowKey="_id" />
     </div>
   );
