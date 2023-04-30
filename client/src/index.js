@@ -11,6 +11,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 // contexts
 import { AuthProvider } from './context/AuthContext';
+import { BasketProvider } from './context/BasketContext';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
 const queryClient = new QueryClient({
@@ -26,7 +27,9 @@ ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <ChakraProvider>
       <AuthProvider>
-        <App />
+        <BasketProvider>
+          <App />
+        </BasketProvider>
       </AuthProvider>
     </ChakraProvider>
     <ReactQueryDevtools initialIsOpen={false} />
