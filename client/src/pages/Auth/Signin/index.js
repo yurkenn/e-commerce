@@ -21,7 +21,6 @@ const Signin = () => {
         const loginResponse = await fetchLogin({ email: values.email, password: values.password });
         login(loginResponse);
         history.push('/profile');
-        console.log(loginResponse);
       } catch (error) {
         bag.setErrors({ general: error.response.data.message });
       }
