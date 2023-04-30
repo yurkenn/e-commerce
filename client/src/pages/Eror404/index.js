@@ -8,7 +8,6 @@ const Eror404 = () => {
         <AlertTitle>Error 404!</AlertTitle>
         <AlertDescription>This page was not found</AlertDescription>
       </Alert>
-      ;
     </>
   );
 };

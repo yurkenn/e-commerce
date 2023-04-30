@@ -18,8 +18,6 @@ const ProductDetail = () => {
 
   if (error) return 'An error has occurred: ' + error.message;
 
-  console.log(data);
-
   const findBasketItem = items.find((item) => item._id === product_id);
 
   const images = data.photos.map((url) => ({ original: url }));

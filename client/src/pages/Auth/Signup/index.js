@@ -22,7 +22,6 @@ const Signup = () => {
         const register = await fetchRegister({ email: values.email, password: values.password });
         login(register);
         history.push('/profile');
-        console.log(register);
       } catch (error) {
         bag.setErrors({ general: error.response.data.message });
       }

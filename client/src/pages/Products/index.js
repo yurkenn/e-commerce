@@ -22,8 +22,6 @@ const Products = () => {
 
   if (error) return 'An error has occurred: ' + error.message;
 
-  console.log(data.pages);
-
   return (
     <div>
       <Grid templateColumns="repeat(2, 1fr)" gap={4}>
