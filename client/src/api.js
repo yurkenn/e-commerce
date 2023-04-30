@@ -48,8 +48,23 @@ export const fetchMe = async () => {
 };
 
 export const fetchLogout = async () => {
-  const { data } = await axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/auth/logout` , {
+  const { data } = await axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/auth/logout`, {
     refresh_token: localStorage.getItem('refresh-token'),
   });
   return data;
-}
+};
+
+export const postOrder = async (input) => {
+  const { data } = await axios.post(`${process.env.REACT_APP_BASE_ENDPOINT}/order`, input);
+  return data;
+};
+
+export const fetchOrders = async () => {
+  const { data } = await axios.get(`${process.env.REACT_APP_BASE_ENDPOINT}/order`);
+  return data;
+};
+
+export const deleteProduct = async (id) => {
+  const { data } = await axios.delete(`${process.env.REACT_APP_BASE_ENDPOINT}/product/${id}`);
+  return data;
+};
