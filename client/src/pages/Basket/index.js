@@ -37,12 +37,10 @@ const Basket = () => {
               </li>
             ))}
           </ul>
+          <Box mt={5}>
+            <Text fontSize={20}>Total: {total} TL</Text>
+          </Box>
         </>
-      )}
-      {items.length > 0 && (
-        <Box mt={5}>
-          <Text fontSize={20}>Total: {total} TL</Text>
-        </Box>
       )}
     </Box>
   );
