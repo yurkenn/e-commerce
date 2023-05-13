@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
         <ul className={styles.menu}>
           <li>
-            <Link to="/">Product</Link>
+            <Link to="/">Laptops</Link>
           </li>
         </ul>
       </div>
@@ -34,10 +34,14 @@ const Navbar = () => {
         {!loggedIn && (
           <>
             <Link to="/signin">
-              <Button colorScheme="blue">Login</Button>
+              <Button colorScheme="blue" variant="outline">
+                Login
+              </Button>
             </Link>
             <Link to="/signup">
-              <Button colorScheme="blue">Register</Button>
+              <Button colorScheme="blue" variant="outline">
+                Register
+              </Button>
             </Link>
           </>
         )}
@@ -59,12 +63,12 @@ const Navbar = () => {
               </Link>
             )}
             <Link to="/profile">
-              <Button marginRight={1} colorScheme="blue">
+              <Button marginRight={1} variant="outline" colorScheme="blue">
                 Profile
               </Button>
             </Link>
             <Link to="/logout">
-              <Button onClick={handleLogout} colorScheme="blue">
+              <Button onClick={handleLogout} variant="outline" colorScheme="blue">
                 Logout
               </Button>
             </Link>
