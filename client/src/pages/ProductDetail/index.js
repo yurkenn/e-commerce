@@ -23,18 +23,34 @@ const ProductDetail = () => {
   const images = data.photos.map((url) => ({ original: url }));
 
   return (
-    <Box>
-      <Button
-        onClick={() => addToBasket(data, findBasketItem)}
-        colorScheme={findBasketItem ? 'green' : 'red'}
-      >
-        {findBasketItem ? 'Remove from Basket' : 'Add to Basket'}
-      </Button>
-      <Text fontSize="2xl">{data.title}</Text>
-      <Text>{moment(data.createdAt).format('DD/MM/YYYY')}</Text>
-      <Text>{data.description}</Text>
-      <Text>{data.price}</Text>
-      <ImageGalery items={images} />
+    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} mt={'10'}>
+      <Box w={'30%'} mr={'10'}>
+        <ImageGalery items={images} />
+      </Box>
+      <Box w={'40%'}>
+        <Text fontSize={'2xl'} fontWeight={'bold'}>
+          {data.title}
+        </Text>
+        <Text color={'grey'} fontWeight={'bold'}>
+          {data.description}
+        </Text>
+        <Text fontSize={'xl'} fontWeight={'bold'}>
+          {data.category}
+        </Text>
+        <Text fontSize={'sm'} fontWeight={'bold'}>
+          {moment(data.createdAt).format('DD/MM/YYYY')}
+        </Text>
+        <Text color="green" mt={5} fontSize={'xl'} fontWeight={'bold'}>
+          {data.price} TL
+        </Text>
+        <Button
+          mt={'5'}
+          onClick={() => addToBasket(data, findBasketItem)}
+          colorScheme={findBasketItem ? 'green' : 'red'}
+        >
+          {findBasketItem ? 'Remove from Basket' : 'Add to Basket'}
+        </Button>
+      </Box>
     </Box>
   );
 };
