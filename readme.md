@@ -2,6 +2,8 @@
 
 ## Video
 
+https://github.com/yurkenn/e-commerce/assets/69719126/368a9c3d-59c3-4110-b11e-e0dbcc20f35c
+
 ## Description
 
 This is a simple e-commerce website that allows users to add items to their cart and checkout. The website is built using the React and Context. The website is also connected to a MongoDB database to store the items and user information.
