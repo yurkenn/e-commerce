@@ -30,8 +30,9 @@ const Card = ({ item }) => {
         </Box>
       </Link>
       <Button
+        ml={5}
         onClick={() => addToBasket(item, findBasketItem)}
-        colorScheme={findBasketItem ? 'red' : 'green'}
+        colorScheme={findBasketItem ? 'red' : 'green'} // if item is in basket, color is red, else green
       >
         {findBasketItem ? 'Remove from Basket' : 'Add to Basket'}
       </Button>
